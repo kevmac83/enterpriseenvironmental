@@ -809,7 +809,7 @@ h4.heading {
 
 .widgetheading {
 	width:100%;
-
+  font-size: 15px;
 	padding:0;
 }
 
@@ -1569,7 +1569,7 @@ ul.social-network li {
 
 .copyright {
 	text-align:left;
-	font-size:12px;
+	font-size:10px;
 }
 
 #sub-footer ul.social-network {

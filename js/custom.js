@@ -54,7 +54,27 @@ jQuery(document).ready(function($) {
 					title : { type: 'inside' },
 				}
 			});
+		//EE functions
+		$("#payment").change(function() {
+			if($("#payment").find(":selected").val() != "invoice") {
+				$("#value").hide();
+			}
+			else {
+				$("#value").show();
+			}
+		});
+		$(":checkbox").change(function() {
+			if($('input[name="courseCheckbox[]"]:checked').length == 2) {
+				$("#value").val("€495");
+			}
+			else if ($('input[name="courseCheckbox[]"]:checked').length == 1) {
+				$("#value").val("€330");
+			}
+			else {
+				$("#value").val("€0");
+			}
 
+		});
 
 		//scroll to top
 		$(window).scroll(function(){

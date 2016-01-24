@@ -12,12 +12,18 @@ $post = (!empty($_POST)) ? true : false;
 
 if($post)
 {
-
 $name = stripslashes($_POST['name']);
+$courseDays = $_POST['courseCheckbox[]'];
+$payment = $_POST['payment'];
+$value = $_POST['value'];
 $email = trim($_POST['email']);
-$subject = stripslashes($_POST['subject']);
-$message = stripslashes($_POST['message']);
+$company = stripslashes($_POST['company']);
+$position = stripslashes($_POST['position']);
+$address = stripslashes($_POST['address']);
 
+$subject = $name . " " . $company;
+
+$message = "Name: " . $name . "\r\n" . "Course Days: " . $courseDays . "\r\n" . "Payment type: " . $payment . "\r\n" . "Amount: " . $value . "\r\n" . "Email: " . $email . "\r\n" . "Company: " . $company . "\r\n" . "Position:" . $position . "\r\n" . "Address:" . $address;
 
 $error = '';
 
@@ -26,8 +32,8 @@ $error = '';
 if(!$error)
 {
 $mail = mail(WEBMASTER_EMAIL, $subject, $message,
-     "From: ".$name." <".$email.">\r\n"
-    ."Reply-To: ".$email."\r\n"
+     "From: EE Website <info@enterpriseenvironmental.com>\r\n"
+    ."Reply-To: info@enterpriseenvironmental.com\r\n"
     ."X-Mailer: PHP/" . phpversion());
 
 

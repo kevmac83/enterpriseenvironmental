@@ -13,7 +13,7 @@ $post = (!empty($_POST)) ? true : false;
 if($post)
 {
 $name = stripslashes($_POST['name']);
-$courseDays = $_POST['courseCheckbox[]'];
+$courseDays = $_POST['courseCheckbox'];
 $payment = $_POST['payment'];
 $value = $_POST['value'];
 $email = trim($_POST['email']);
@@ -23,7 +23,7 @@ $address = stripslashes($_POST['address']);
 
 $subject = $name . " " . $company;
 
-$message = "Name: " . $name . "\r\n" . "Course Days: " . $courseDays . "\r\n" . "Payment type: " . $payment . "\r\n" . "Amount: " . $value . "\r\n" . "Email: " . $email . "\r\n" . "Company: " . $company . "\r\n" . "Position:" . $position . "\r\n" . "Address:" . $address;
+$message = "Name: " . $name . "\r\n" . "Course Days: " . $courseDays[0] . " " . $courseDays[1] . "\r\n" . "Payment type: " . $payment . "\r\n" . "Amount: " . $value . "\r\n" . "Email: " . $email . "\r\n" . "Company: " . $company . "\r\n" . "Position:" . $position . "\r\n" . "Address:" . $address;
 
 $error = '';
 
